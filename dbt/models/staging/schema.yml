@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_prescribers
+    description: "Cleaned and renamed CMS Medicare Part D prescriber records. Suppressed values (* and #) cast to null. US-only, non-null specialty and state."
+    columns:
+      - name: prescriber_npi
+        description: "National Provider Identifier"
+        tests:
+          - not_null
+          - unique
+      - name: specialty
+        description: "Prescriber specialty"
+        tests:
+          - not_null
+      - name: state
+        description: "US state abbreviation"
+        tests:
+          - not_null
+      - name: total_drug_cost
+        description: "Total drug cost in USD"
+      - name: opioid_prescriber_rate
+        description: "Percentage of prescriber's claims that are opioids"

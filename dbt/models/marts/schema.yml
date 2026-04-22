@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: mart_specialty_spend
+    description: "Per-specialty drug spend totals with cumulative percentage. Use for bar charts and Pareto analysis."
+    columns:
+      - name: specialty
+        tests:
+          - not_null
+          - unique
+      - name: total_spend
+        tests:
+          - not_null
+      - name: total_prescribers
+        tests:
+          - not_null
+
+  - name: mart_state_spend
+    description: "Per-state drug spend, beneficiary counts, and cost per beneficiary. Use for geographic maps."
+    columns:
+      - name: state
+        tests:
+          - not_null
+          - unique
+      - name: total_drug_spend
+        tests:
+          - not_null
+
+  - name: mart_branded_generic
+    description: "Branded vs generic drug spend split by specialty. Use for stacked bar charts."
+    columns:
+      - name: specialty
+        tests:
+          - not_null
+          - unique
+      - name: branded_pct
+        tests:
+          - not_null
+      - name: generic_pct
+        tests:
+          - not_null
+
+  - name: mart_opioid_outliers
+    description: "Prescribers whose opioid prescribing rate exceeds their specialty average by more than 40 points."
+    columns:
+      - name: prescriber_npi
+        tests:
+          - not_null
+          - unique
+      - name: outlier_flag
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['HIGH OUTLIER']
+
+  - name: mart_dashboard_master
+    description: "State × specialty combination with spend, beneficiaries, branded/generic split, and avg opioid rate. Primary source for cross-filtered Tableau views."
+    columns:
+      - name: state
+        tests:
+          - not_null
+      - name: specialty
+        tests:
+          - not_null
+      - name: total_drug_spend
+        tests:
+          - not_null

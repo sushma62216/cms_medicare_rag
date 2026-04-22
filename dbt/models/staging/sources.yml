@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: raw
+    database: cms_medicare
+    schema: raw
+    tables:
+      - name: part_d_prescribers
+        description: "CMS Medicare Part D prescriber-level data with drug claims, costs, and beneficiary demographics"
+        columns:
+          - name: PRSCRBR_NPI
+            description: "National Provider Identifier — unique prescriber ID"
+            tests:
+              - not_null
+              - unique
+          - name: PRSCRBR_TYPE
+            description: "Prescriber specialty type (3 rows are null in source; filtered in staging)"
+          - name: PRSCRBR_STATE_ABRVTN
+            description: "State abbreviation"
