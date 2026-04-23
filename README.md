@@ -6,7 +6,7 @@ An end-to-end data engineering and AI portfolio project that transforms **1.1 mi
 
 ## Architecture
 
-![Architecture](docs/architecture.png)
+![Architecture](docs/architecture-2.png)
 
 ---
 
