@@ -6,9 +6,7 @@ An end-to-end data engineering and AI portfolio project that transforms **1.1 mi
 
 ## Architecture
 
-<!-- Architecture diagram coming soon -->
-<!-- Replace the line below with: ![Architecture](docs/architecture.png) -->
-> Architecture diagram — `docs/architecture.png` (in progress)
+![Architecture](docs/architecture.png)
 
 ---
 
