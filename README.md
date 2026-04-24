@@ -152,6 +152,12 @@ Response: { "answer": "The top three specialties...", "sources": [{ "summary_typ
 
 ---
 
+## Visualisation
+
+![CMS Medicare Part D Prescriber Analytics Dashboard](docs/dashboard.png)
+
+---
+
 ## Roadmap
 
 - [x] dbt staging model (`stg_prescribers`)
